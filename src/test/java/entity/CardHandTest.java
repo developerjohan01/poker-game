@@ -31,6 +31,14 @@ class CardHandTest {
     }
 
     @Test
+    void getCard() {
+        // Only 0 when the hand is empty, before adding cards
+        assertEquals(0, subject.getCards().size());
+        subject = game.getHandOfCardsFromInput(testHand);
+        assertEquals(5, subject.getCards().size());
+    }
+
+    @Test
     void isFullHand() {
         assertEquals(false, subject.isFullHand());
         subject.addCard(new Card("A", "S")); // 1

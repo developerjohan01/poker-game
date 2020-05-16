@@ -31,7 +31,7 @@ class SuiteEvaluationRuleTest {
     void sameSuiteEvaluate() {
         hand = game.getHandOfCardsFromInput(sameSuiteHand);
         String evaluation = rankRule.evaluate(hand);
-        assertEquals("Flush of Spades", evaluation);
+        assertEquals("Flush of SPADES", evaluation);
     }
 
 }

@@ -42,6 +42,10 @@ public class CardHand {
         return cardAdded;
     }
 
+    public Set<Card> getCards() {
+        return  this.originalHand;
+    }
+
     public Integer getNumberOfCards() {
         return originalHand.size();
     }
