@@ -35,7 +35,12 @@ public class CardDeck {
     }
 
     public Integer getCardRankingValue(String symbol) {
-        return cardRankingSymbolValueMap.get(symbol);
+        Integer rankingValue = cardRankingSymbolValueMap.get(symbol);
+        if (rankingValue != null){
+            return rankingValue;
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 
     // TODO do we need this?

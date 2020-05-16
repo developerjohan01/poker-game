@@ -24,8 +24,26 @@ class GameTest {
     void getHandOfCardsFromInput() {
         String[] input = {"AS", "10C", "10H", "3D", "3S"};
         CardHand hand = subject.getHandOfCardsFromInput(input);
-        assertNull(hand); // TODO this should be NOT null - fixing now
-        // assertNotNull(hand);
+        assertNotNull(hand);
+        assertEquals(5, hand.getNumberOfCards().intValue());
+    }
+
+    @Test
+    void invalidGetHandOfCardsFromInput() {
+        String[] input1 = {"AS", "10C", "10H", "3D"};
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            subject.getHandOfCardsFromInput(input1);
+        });
+
+        String[] input2 = {"AS", "10C", "10H", "3D", "some-value"};
+        assertThrows(IllegalArgumentException.class, () -> {
+            subject.getHandOfCardsFromInput(input2);
+        });
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            subject.getHandOfCardsFromInput(null);
+        });
     }
 
     @Test

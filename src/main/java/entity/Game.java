@@ -13,14 +13,20 @@ public class Game {
         return instance;
     }
 
-    public CardHand getHandOfCardsFromInput(String[] input) {
-        // TODO Process input
-        // TODO We can (should) do error checking here too: is the input valid?@
-        // TODO at the moment we are going to ignore the input and use a fixed input the we know should work
-        String[] fixedInput = {"AS", "10C", "10H", "3D", "3S"};
-        // TODO build the hand of cards
-        CardHand handOfCards = null;
-        return  handOfCards;
+    public CardHand getHandOfCardsFromInput(String[] handInput) {
+        // Process handInput
+        if (handInput != null && handInput.length == 5) {
+            CardHand handOfCards = new CardHand();
+            // Build the hand of cards
+            for (String cardString : handInput) {
+                String rankSymbol = cardString.substring(0, cardString.length() - 1);
+                String suiteLetter = cardString.substring(cardString.length() - 1);
+                handOfCards.addCard(new Card(rankSymbol, suiteLetter));
+            }
+            return handOfCards;
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 
     public String result() {

@@ -28,6 +28,12 @@ class CardDeckTest {
         assertEquals( 4, subject.getCardRankingValue("10").intValue());
     }
 
+    @Test
+    void invalidGetCardRankingValue() {
+        assertEquals( 0, subject.getCardRankingValue("11").intValue());
+        assertEquals( 0, subject.getCardRankingValue("What is this").intValue());
+    }
+
     @Disabled
     @Test
     void getCardRankingSymbol() {
