@@ -66,4 +66,10 @@ class CardHandTest {
         subject.addCard(new Card("3", "S")); // 5
         assertEquals(4, subject.getNumberOfSuite().intValue());
     }
+
+    @Test
+    void evaluateHand() {
+        assertNotNull(subject.evaluateHand());
+        assertTrue(subject.evaluateHand().length() > 0);
+    }
 }

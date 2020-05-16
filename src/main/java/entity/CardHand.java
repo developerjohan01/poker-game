@@ -15,7 +15,7 @@ public class CardHand {
         return originalHand.size() == 5;
     }
 
-    Boolean addCard(Card newCard) {
+    public Boolean addCard(Card newCard) {
         Boolean cardAdded = false;
         if (!isFullHand()) {
             cardAdded = originalHand.add(newCard);
@@ -37,15 +37,19 @@ public class CardHand {
         return cardAdded;
     }
 
-    Integer getNumberOfCards() {
+    public Integer getNumberOfCards() {
         return originalHand.size();
     }
 
-    Integer getNumberOfNumbers() {
+    public Integer getNumberOfNumbers() {
         return numberOfNumbers.size();
     }
 
-    Integer getNumberOfSuite() {
+    public Integer getNumberOfSuite() {
         return numberOfSuite.size();
+    }
+
+    public String evaluateHand() {
+        return "";
     }
 }

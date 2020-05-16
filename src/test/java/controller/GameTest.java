@@ -1,5 +1,7 @@
-package entity;
+package controller;
 
+import controller.Game;
+import entity.CardHand;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +13,7 @@ class GameTest {
 
     @BeforeEach
     void setUp() {
-        subject = new Game();
+        subject = Game.newInstance();
     }
 
     @Test

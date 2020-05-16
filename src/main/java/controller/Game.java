@@ -1,9 +1,11 @@
-package entity;
+package controller;
+
+import entity.Card;
+import entity.CardHand;
 
 public class Game {
-    // TODO change accessor
     // We normally don't have a public constructor when using a static creator/factory method
-    public Game() {
+    private Game() {
         System.out.println("new Game");
     }
 
