@@ -3,18 +3,27 @@ package entity;
 import java.util.Objects;
 
 public class Card {
-    Integer rank;
-    Suite suite;
+    private Integer rankValue;
+    private Suite suite;
     static CardDeck belongsToDeckOfCards = new CardDeck();
 
-    public Card(Integer rank, Suite suite) {
-        this.rank = rank;
+    public Card(Integer rankValue, Suite suite) {
+        this.rankValue = rankValue;
         this.suite = suite;
     }
 
     public Card(String rank, String suite) {
-        this.rank = belongsToDeckOfCards.getCardRankingValue(rank);
+        this.rankValue = belongsToDeckOfCards.getCardRankingValue(rank);
         this.suite = Suite.letterValueOf(suite);
+    }
+
+
+    public Integer getRankValue() {
+        return rankValue;
+    }
+
+    public Suite getSuite() {
+        return suite;
     }
 
     // If we want to change the Deck Of Cards OR the Game - this might change the RankingValue
@@ -27,12 +36,12 @@ public class Card {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Card card = (Card) o;
-        return rank.equals(card.rank) &&
+        return rankValue.equals(card.rankValue) &&
                 suite == card.suite;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(rank, suite);
+        return Objects.hash(rankValue, suite);
     }
 }

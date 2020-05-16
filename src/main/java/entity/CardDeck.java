@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 public class CardDeck {
     private static final int numberOfCards = 52; // 54? no! we ignore the Jokers now
-    Map<String, Integer> cardRankingSymbolValueMap = Stream.of(new Object[][] {
+    private Map<String, Integer> cardRankingSymbolValueMap = Stream.of(new Object[][] {
             {"A", 0},
             {"K", 1},
             {"Q", 2},

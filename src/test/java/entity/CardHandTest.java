@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CardHandTest {
 
     CardHand subject;
-    String[] testHand = {"AS", "10C", "10H", "3D", "3S"};
+    // String[] testHand = {"AS", "10C", "10H", "3D", "3S"};
 
     @BeforeEach
     void setUp() {
