@@ -1,6 +1,6 @@
 package entity;
 
 public class Card {
-    int rank;
+    Integer rank;
     Suite suite;
 }
