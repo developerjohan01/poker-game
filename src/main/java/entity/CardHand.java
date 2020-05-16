@@ -1,15 +1,20 @@
 package entity;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import controller.EvaluationRule;
+
+import java.util.*;
 
 public class CardHand {
     // It is a good idea to initialize the collections with empty Set/Map(s) to avoid constant checks for null
     private Set<Card> originalHand = new HashSet<>();
     private Map<Integer, Integer> numberOfNumbers = new HashMap<>();
     private Map<Suite, Integer> numberOfSuite = new HashMap<>();
+
+    private List<EvaluationRule> rules = new ArrayList<>();
+    // Make it possible to set the rules so we could have different rules for different hands/games
+    public void setRules(List<EvaluationRule> rules) {
+        this.rules = rules;
+    }
 
     Boolean isFullHand() {
         return originalHand.size() == 5;
@@ -50,6 +55,11 @@ public class CardHand {
     }
 
     public String evaluateHand() {
-        return "";
+        String handEvaluated = "";
+        for (EvaluationRule rule:
+             rules) {
+            rule.evaluate(this);
+        }
+        return handEvaluated;
     }
 }
