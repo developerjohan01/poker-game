@@ -1,5 +1,6 @@
 package entity;
 
+import controller.Game;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -7,11 +8,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CardHandTest {
 
+    Game game; // the context in which the hand is used
     CardHand subject;
-    // String[] testHand = {"AS", "10C", "10H", "3D", "3S"};
+    String[] testHand = {"AS", "10C", "10H", "3D", "3S"};
 
     @BeforeEach
     void setUp() {
+        game = Game.newInstance();
+        // TODO set the evaluation rules
         subject = new CardHand();
     }
 
@@ -47,11 +51,7 @@ class CardHandTest {
     void getNumberOfNumbers() {
         // Only 0 when the hand is empty, before adding cards
         assertEquals(0, subject.getNumberOfNumbers().intValue());
-        subject.addCard(new Card("A", "S")); // 1
-        subject.addCard(new Card("10", "C")); // 2
-        subject.addCard(new Card("10", "H")); // 3
-        subject.addCard(new Card("3", "D")); // 4
-        subject.addCard(new Card("3", "S")); // 5
+        subject = game.getHandOfCardsFromInput(testHand);
         assertEquals(3, subject.getNumberOfNumbers().intValue());
     }
 
@@ -59,11 +59,7 @@ class CardHandTest {
     void getNumberOfSuite() {
         // ONLY 0 when the hand is empty, before adding cards
         assertEquals(0, subject.getNumberOfSuite().intValue());
-        subject.addCard(new Card("A", "S")); // 1
-        subject.addCard(new Card("10", "C")); // 2
-        subject.addCard(new Card("10", "H")); // 3
-        subject.addCard(new Card("3", "D")); // 4
-        subject.addCard(new Card("3", "S")); // 5
+        subject = game.getHandOfCardsFromInput(testHand);
         assertEquals(4, subject.getNumberOfSuite().intValue());
     }
 
