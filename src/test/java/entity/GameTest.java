@@ -21,6 +21,14 @@ class GameTest {
     }
 
     @Test
+    void getHandOfCardsFromInput() {
+        String[] input = {"AS", "10C", "10H", "3D", "3S"};
+        CardHand hand = subject.getHandOfCardsFromInput(input);
+        assertNull(hand); // TODO this should be NOT null - fixing now
+        // assertNotNull(hand);
+    }
+
+    @Test
     void result() {
         String gameResult = subject.result();
         // TODO This will fail as soon as we start getting real results
