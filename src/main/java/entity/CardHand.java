@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class CardHand {
+    // It is a good idea to initialize the collections with empty Set/Map(s) to avoid constant checks for null
     Set<Card> originalHand = new HashSet<>();
     Map<Integer, Integer> numberOfNumbers = new HashMap<>();
     Map<Integer, Integer> numberOfSuite = new HashMap<>();
