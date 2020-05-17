@@ -16,4 +16,6 @@ AS 10S 9S 5S 3S
 
 Output would be: Flush of SPADES
 
+Invalid inputs won't be accepted and an IllegalArgumentException() is thrown.
+
 Note; not all evaluation rules are implemented, but can easily be added.
