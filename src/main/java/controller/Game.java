@@ -1,7 +1,8 @@
 package controller;
 
 import entity.Card;
-import entity.CardHand;
+import entity.CardHandEvaluationRules;
+import entity.PokerCardHand;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,18 +21,18 @@ public class Game {
 
     private List<EvaluationRule> gameRules = new ArrayList<>();
 
-    private void setupRules(CardHand hand) {
+    private void setupRules(CardHandEvaluationRules hand) {
         gameRules.add(new RankEvaluationRule());
         gameRules.add(new SuiteEvaluationRule());
         hand.setRules(gameRules);
     }
 
-    private CardHand hand;
+    private PokerCardHand hand;
 
-    public CardHand setupGameOfCardsFromInput(String[] handInput) {
+    public PokerCardHand setupGameOfCardsFromInput(String[] handInput) {
         // Process handInput
         if (handInput != null && handInput.length == 5) {
-            CardHand handOfCards = new CardHand();
+            PokerCardHand handOfCards = new PokerCardHand();
             // Build the hand of cards
             for (String cardString : handInput) {
                 String rankSymbol = cardString.substring(0, cardString.length() - 1);

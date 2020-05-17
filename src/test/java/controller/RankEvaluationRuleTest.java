@@ -1,6 +1,6 @@
 package controller;
 
-import entity.CardHand;
+import entity.PokerCardHand;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -11,7 +11,7 @@ class RankEvaluationRuleTest {
 
     EvaluationRule rankRule;
     Game game; // the context in which the hand is used
-    CardHand hand;
+    PokerCardHand hand;
 
     @BeforeEach
     void setUp() {
@@ -35,8 +35,6 @@ class RankEvaluationRuleTest {
         assertEquals("Two pairs", evaluation);
     }
 
-    // TODO More tests of more rules
-    @Disabled
     @Test
     void threeOfTheSameEvaluate() {
         String[] threeSameHand = {"AS", "10C", "10H", "10D", "3S"};
@@ -44,5 +42,7 @@ class RankEvaluationRuleTest {
         String evaluation = rankRule.evaluate(hand);
         assertEquals("Three of the same", evaluation);
     }
+
+    // TODO More tests of more rules
 
 }
