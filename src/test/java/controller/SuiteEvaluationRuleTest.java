@@ -1,6 +1,6 @@
 package controller;
 
-import entity.CardHand;
+import entity.PokerCardHand;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +10,7 @@ class SuiteEvaluationRuleTest {
 
     EvaluationRule rankRule;
     Game game; // the context in which the hand is used
-    CardHand hand;
+    PokerCardHand hand;
     String[] mixedSuiteHand = {"AS", "10C", "10H", "3D", "3S"};
     String[] sameSuiteHand = {"AS", "10S", "9S", "3S", "2S"};
 

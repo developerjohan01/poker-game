@@ -1,10 +1,10 @@
 package controller;
 
-import entity.CardHand;
+import entity.CardHandEvaluationRules;
 
 public class TopCardEvaluationRule implements EvaluationRule {
     @Override
-    public String evaluate(CardHand hand) {
+    public String evaluate(CardHandEvaluationRules hand) {
         return null;
     }
 }

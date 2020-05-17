@@ -1,7 +1,7 @@
 package controller;
 
-import entity.CardHand;
+import entity.CardHandEvaluationRules;
 
 public interface EvaluationRule {
-    String evaluate(CardHand hand);
+    String evaluate(CardHandEvaluationRules hand);
 }

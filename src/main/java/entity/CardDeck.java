@@ -45,7 +45,7 @@ public class CardDeck {
 
     // TODO do we need this?
     public String getCardRankingSymbol(Integer value) {
-//        return cardValueRankingMap.get(value);
+    //  return cardValueRankingMap.get(value);
         return "A";
     }
 }

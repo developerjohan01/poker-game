@@ -6,17 +6,18 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CardHandTest {
+class PokerCardHandTest {
 
     Game game; // the context in which the hand is used
-    CardHand subject;
-    String[] testHand = {"AS", "10C", "10H", "3D", "3S"};
+    PokerCardHand subject;
+    String[] twoPairsHand = {"AS", "10C", "10H", "3D", "3S"};
+    String[] fourSameHand = {"10S", "10C", "10H", "10D", "3S"};
 
     @BeforeEach
     void setUp() {
         game = Game.newInstance();
         // TODO set the evaluation rules
-        subject = new CardHand();
+        subject = new PokerCardHand();
     }
 
     @Test
@@ -34,7 +35,7 @@ class CardHandTest {
     void getCard() {
         // Only 0 when the hand is empty, before adding cards
         assertEquals(0, subject.getCards().size());
-        subject = game.setupGameOfCardsFromInput(testHand);
+        subject = game.setupGameOfCardsFromInput(twoPairsHand);
         assertEquals(5, subject.getCards().size());
     }
 
@@ -56,25 +57,38 @@ class CardHandTest {
     }
 
     @Test
-    void getNumberOfNumbers() {
+    void getNumberOfRanks() {
         // Only 0 when the hand is empty, before adding cards
-        assertEquals(0, subject.getNumberOfNumbers().intValue());
-        subject = game.setupGameOfCardsFromInput(testHand);
-        assertEquals(3, subject.getNumberOfNumbers().intValue());
+        assertEquals(0, subject.getNumberOfRanks().intValue());
+        subject = game.setupGameOfCardsFromInput(twoPairsHand);
+        assertEquals(3, subject.getNumberOfRanks().intValue());
+    }
+
+    @Test
+    void numberOfRanksContains() {
+        // Only 0 when the hand is empty, before adding cards
+        assertFalse(subject.numberOfRanksContains(2));
+        subject = game.setupGameOfCardsFromInput(twoPairsHand);
+        assertTrue(subject.numberOfRanksContains(2));
+
+        assertFalse(subject.numberOfRanksContains(4));
+        subject = game.setupGameOfCardsFromInput(fourSameHand);
+        assertTrue(subject.numberOfRanksContains(4));
     }
 
     @Test
     void getNumberOfSuite() {
         // ONLY 0 when the hand is empty, before adding cards
         assertEquals(0, subject.getNumberOfSuite().intValue());
-        subject = game.setupGameOfCardsFromInput(testHand);
+        subject = game.setupGameOfCardsFromInput(twoPairsHand);
         assertEquals(4, subject.getNumberOfSuite().intValue());
     }
 
     @Test
     void evaluateHand() {
         assertNotNull(subject.evaluateHand());
-        // TODO
+        assertTrue(subject.evaluateHand().length() == 0);
+        subject = game.setupGameOfCardsFromInput(twoPairsHand);
         assertTrue(subject.evaluateHand().length() > 0);
     }
 }

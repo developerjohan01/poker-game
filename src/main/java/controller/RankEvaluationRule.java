@@ -1,12 +1,17 @@
 package controller;
 
-import entity.CardHand;
+import entity.CardHandEvaluationRules;
+import entity.PokerCardHand;
 
 public class RankEvaluationRule implements EvaluationRule {
     @Override
-    public String evaluate(CardHand hand) {
+    public String evaluate(CardHandEvaluationRules hand) {
         String result = "";
-        switch (hand.getNumberOfNumbers()) {
+        if (!(hand instanceof PokerCardHand)) {
+            return result;
+        }
+        PokerCardHand pokerHand = (PokerCardHand) hand;
+        switch (pokerHand.getNumberOfRanks()) {
             case 1 :
                 // 5 of the same NOTE we dont support Jokers at the moment so we cant get this
                 result = "5 of the same";
@@ -19,7 +24,9 @@ public class RankEvaluationRule implements EvaluationRule {
                 // TODO lets assume that tis is ALWAYS 2 pairs then the first test passes
                 result = "Two pairs";
                 // TODO then we need to fix the next test which checks for 3 of the same
-                // result = "Three of the same";
+                if (pokerHand.numberOfRanksContains(3)) {
+                    result = "Three of the same";
+                }
                 break;
             case 4 :
                 // It is a pair (2+1+1+1)

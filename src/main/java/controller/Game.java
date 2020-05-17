@@ -1,7 +1,8 @@
 package controller;
 
 import entity.Card;
-import entity.CardHand;
+import entity.CardHandEvaluationRules;
+import entity.PokerCardHand;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,30 +21,33 @@ public class Game {
 
     private List<EvaluationRule> gameRules = new ArrayList<>();
 
-    private void setupRules(CardHand hand) {
+    private void setupRules(CardHandEvaluationRules hand) {
         gameRules.add(new RankEvaluationRule());
         gameRules.add(new SuiteEvaluationRule());
         hand.setRules(gameRules);
     }
 
-    private CardHand hand;
+    private PokerCardHand hand;
 
-    public CardHand setupGameOfCardsFromInput(String[] handInput) {
+    public PokerCardHand setupGameOfCardsFromInput(String[] handInput) {
         // Process handInput
         if (handInput != null && handInput.length == 5) {
-            CardHand handOfCards = new CardHand();
-            // Build the hand of cards
-            for (String cardString : handInput) {
-                String rankSymbol = cardString.substring(0, cardString.length() - 1);
-                String suiteLetter = cardString.substring(cardString.length() - 1);
-                handOfCards.addCard(new Card(rankSymbol, suiteLetter));
-            }
-            this.hand = handOfCards;
+            this.hand = buildPokerHand(handInput);
             this.setupRules(this.hand);
             return this.hand;
         } else {
             throw new IllegalArgumentException();
         }
+    }
+
+    private PokerCardHand buildPokerHand(String[] handInput) {
+        PokerCardHand handOfCards = new PokerCardHand();
+        for (String cardString : handInput) {
+            String rankSymbol = cardString.substring(0, cardString.length() - 1);
+            String suiteLetter = cardString.substring(cardString.length() - 1);
+            handOfCards.addCard(new Card(rankSymbol, suiteLetter));
+        }
+        return handOfCards;
     }
 
     public String result() {

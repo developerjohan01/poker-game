@@ -1,23 +1,29 @@
 package controller;
 
 import entity.Card;
-import entity.CardHand;
+import entity.CardHandEvaluationRules;
+import entity.PokerCardHand;
 
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 public class SuiteEvaluationRule implements EvaluationRule {
     @Override
-    public String evaluate(CardHand hand) {
+    public String evaluate(CardHandEvaluationRules hand) {
         String result = "";
-        if (hand.getNumberOfSuite() == 1) {
+        if (!(hand instanceof PokerCardHand)) {
+            return result;
+        }
+        PokerCardHand pokerHand = (PokerCardHand) hand;
+        if (pokerHand.getNumberOfSuite() == 1) {
             // If the number of suites is 1 then it is a flush
             result = "Flush of";
-            // Get a card so we can check what Suite
-            Set<Card> cards = hand.getCards();
-            Iterator iterator = cards.iterator();
-            Card card = (Card) iterator.next();
-            result += " " + card.getSuite().name();
+            // Get any card so we can check what Suite
+            Map<Card, Integer> cards = pokerHand.getCards();
+            Iterator iterator = cards.entrySet().iterator();
+            Map.Entry<Card, Integer> entry = (Map.Entry) iterator.next();
+            result += " " + entry.getKey().getSuite().name();
         }
         return result;
     }
