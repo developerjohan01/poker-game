@@ -22,14 +22,14 @@ class SuiteEvaluationRuleTest {
 
     @Test
     void mixedSuiteEvaluate() {
-        hand = game.getHandOfCardsFromInput(mixedSuiteHand);
+        hand = game.setupGameOfCardsFromInput(mixedSuiteHand);
         String evaluation = rankRule.evaluate(hand);
         assertEquals("", evaluation);
     }
 
     @Test
     void sameSuiteEvaluate() {
-        hand = game.getHandOfCardsFromInput(sameSuiteHand);
+        hand = game.setupGameOfCardsFromInput(sameSuiteHand);
         String evaluation = rankRule.evaluate(hand);
         assertEquals("Flush of SPADES", evaluation);
     }

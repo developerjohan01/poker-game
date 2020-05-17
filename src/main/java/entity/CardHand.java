@@ -62,7 +62,7 @@ public class CardHand {
         String handEvaluated = "";
         for (EvaluationRule rule:
              rules) {
-            rule.evaluate(this);
+            handEvaluated += rule.evaluate(this);
         }
         return handEvaluated;
     }

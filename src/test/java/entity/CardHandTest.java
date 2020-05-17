@@ -34,7 +34,7 @@ class CardHandTest {
     void getCard() {
         // Only 0 when the hand is empty, before adding cards
         assertEquals(0, subject.getCards().size());
-        subject = game.getHandOfCardsFromInput(testHand);
+        subject = game.setupGameOfCardsFromInput(testHand);
         assertEquals(5, subject.getCards().size());
     }
 
@@ -59,7 +59,7 @@ class CardHandTest {
     void getNumberOfNumbers() {
         // Only 0 when the hand is empty, before adding cards
         assertEquals(0, subject.getNumberOfNumbers().intValue());
-        subject = game.getHandOfCardsFromInput(testHand);
+        subject = game.setupGameOfCardsFromInput(testHand);
         assertEquals(3, subject.getNumberOfNumbers().intValue());
     }
 
@@ -67,13 +67,14 @@ class CardHandTest {
     void getNumberOfSuite() {
         // ONLY 0 when the hand is empty, before adding cards
         assertEquals(0, subject.getNumberOfSuite().intValue());
-        subject = game.getHandOfCardsFromInput(testHand);
+        subject = game.setupGameOfCardsFromInput(testHand);
         assertEquals(4, subject.getNumberOfSuite().intValue());
     }
 
     @Test
     void evaluateHand() {
         assertNotNull(subject.evaluateHand());
+        // TODO
         assertTrue(subject.evaluateHand().length() > 0);
     }
 }

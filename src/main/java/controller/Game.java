@@ -3,6 +3,9 @@ package controller;
 import entity.Card;
 import entity.CardHand;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Game {
     // We normally don't have a public constructor when using a static creator/factory method
     private Game() {
@@ -15,7 +18,17 @@ public class Game {
         return instance;
     }
 
-    public CardHand getHandOfCardsFromInput(String[] handInput) {
+    private List<EvaluationRule> gameRules = new ArrayList<>();
+
+    private void setupRules(CardHand hand) {
+        gameRules.add(new RankEvaluationRule());
+        gameRules.add(new SuiteEvaluationRule());
+        hand.setRules(gameRules);
+    }
+
+    private CardHand hand;
+
+    public CardHand setupGameOfCardsFromInput(String[] handInput) {
         // Process handInput
         if (handInput != null && handInput.length == 5) {
             CardHand handOfCards = new CardHand();
@@ -25,13 +38,18 @@ public class Game {
                 String suiteLetter = cardString.substring(cardString.length() - 1);
                 handOfCards.addCard(new Card(rankSymbol, suiteLetter));
             }
-            return handOfCards;
+            this.hand = handOfCards;
+            this.setupRules(this.hand);
+            return this.hand;
         } else {
             throw new IllegalArgumentException();
         }
     }
 
     public String result() {
-        return "Two pairs";
+        if (this.hand != null) {
+            return this.hand.evaluateHand();
+        }
+        return "Hmmm... Not sure...";
     }
 }

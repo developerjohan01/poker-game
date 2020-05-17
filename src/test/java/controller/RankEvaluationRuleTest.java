@@ -22,7 +22,7 @@ class RankEvaluationRuleTest {
     @Test
     void onePairEvaluate() {
         String[] onePairHand = {"AS", "QC", "10H", "3D", "3S"};
-        hand = game.getHandOfCardsFromInput(onePairHand);
+        hand = game.setupGameOfCardsFromInput(onePairHand);
         String evaluation = rankRule.evaluate(hand);
         assertEquals("One pair", evaluation);
     }
@@ -30,17 +30,17 @@ class RankEvaluationRuleTest {
     @Test
     void twoPairsEvaluate() {
         String[] twoPairsHand = {"AS", "10C", "10H", "3D", "3S"};
-        hand = game.getHandOfCardsFromInput(twoPairsHand);
+        hand = game.setupGameOfCardsFromInput(twoPairsHand);
         String evaluation = rankRule.evaluate(hand);
         assertEquals("Two pairs", evaluation);
     }
 
-    // More tests of more rules
+    // TODO More tests of more rules
     @Disabled
     @Test
     void threeOfTheSameEvaluate() {
         String[] threeSameHand = {"AS", "10C", "10H", "10D", "3S"};
-        hand = game.getHandOfCardsFromInput(threeSameHand);
+        hand = game.setupGameOfCardsFromInput(threeSameHand);
         String evaluation = rankRule.evaluate(hand);
         assertEquals("Three of the same", evaluation);
     }

@@ -1,4 +1,3 @@
-import entity.CardHand;
 import controller.Game;
 
 public class StartGame {
@@ -6,9 +5,8 @@ public class StartGame {
     public static void main(String[] args) {
         System.out.println("Staring the Game");
         Game theGame = Game.newInstance();
-        System.out.println("Handle the input");
-        System.out.println(args);
-        CardHand theHand = theGame.getHandOfCardsFromInput(args);
+        theGame.setupGameOfCardsFromInput(args);
+        System.out.println("The result");
         System.out.println(theGame.result());
     }
 }

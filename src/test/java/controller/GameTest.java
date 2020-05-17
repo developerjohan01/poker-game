@@ -1,6 +1,5 @@
 package controller;
 
-import controller.Game;
 import entity.CardHand;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,35 +22,36 @@ class GameTest {
     }
 
     @Test
-    void getHandOfCardsFromInput() {
+    void setupGameOfCardsFromInput() {
         String[] input = {"AS", "10C", "10H", "3D", "3S"};
-        CardHand hand = subject.getHandOfCardsFromInput(input);
+        CardHand hand = subject.setupGameOfCardsFromInput(input);
         assertNotNull(hand);
         assertEquals(5, hand.getNumberOfCards().intValue());
     }
 
     @Test
-    void invalidGetHandOfCardsFromInput() {
+    void invalidSetupGameOfCardsFromInput() {
         String[] input1 = {"AS", "10C", "10H", "3D"};
 
         assertThrows(IllegalArgumentException.class, () -> {
-            subject.getHandOfCardsFromInput(input1);
+            subject.setupGameOfCardsFromInput(input1);
         });
 
         String[] input2 = {"AS", "10C", "10H", "3D", "some-value"};
         assertThrows(IllegalArgumentException.class, () -> {
-            subject.getHandOfCardsFromInput(input2);
+            subject.setupGameOfCardsFromInput(input2);
         });
 
         assertThrows(IllegalArgumentException.class, () -> {
-            subject.getHandOfCardsFromInput(null);
+            subject.setupGameOfCardsFromInput(null);
         });
     }
 
     @Test
     void result() {
+        String[] input = {"AS", "10C", "10H", "3D", "3S"};
+        CardHand hand = subject.setupGameOfCardsFromInput(input);
         String gameResult = subject.result();
-        // TODO This will fail as soon as we start getting real results
         assertEquals("Two pairs", gameResult);
     }
 }
