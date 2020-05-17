@@ -30,8 +30,8 @@ class CardDeckTest {
 
     @Test
     void invalidGetCardRankingValue() {
-        assertEquals( 0, subject.getCardRankingValue("11").intValue());
-        assertEquals( 0, subject.getCardRankingValue("What is this").intValue());
+        assertThrows(IllegalArgumentException.class, () -> { subject.getCardRankingValue("11"); });
+        assertThrows(IllegalArgumentException.class, () -> { subject.getCardRankingValue("What is this"); });
     }
 
     @Disabled
