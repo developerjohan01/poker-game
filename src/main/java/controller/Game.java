@@ -32,19 +32,22 @@ public class Game {
     public PokerCardHand setupGameOfCardsFromInput(String[] handInput) {
         // Process handInput
         if (handInput != null && handInput.length == 5) {
-            PokerCardHand handOfCards = new PokerCardHand();
-            // Build the hand of cards
-            for (String cardString : handInput) {
-                String rankSymbol = cardString.substring(0, cardString.length() - 1);
-                String suiteLetter = cardString.substring(cardString.length() - 1);
-                handOfCards.addCard(new Card(rankSymbol, suiteLetter));
-            }
-            this.hand = handOfCards;
+            this.hand = buildPokerHand(handInput);
             this.setupRules(this.hand);
             return this.hand;
         } else {
             throw new IllegalArgumentException();
         }
+    }
+
+    private PokerCardHand buildPokerHand(String[] handInput) {
+        PokerCardHand handOfCards = new PokerCardHand();
+        for (String cardString : handInput) {
+            String rankSymbol = cardString.substring(0, cardString.length() - 1);
+            String suiteLetter = cardString.substring(cardString.length() - 1);
+            handOfCards.addCard(new Card(rankSymbol, suiteLetter));
+        }
+        return handOfCards;
     }
 
     public String result() {
