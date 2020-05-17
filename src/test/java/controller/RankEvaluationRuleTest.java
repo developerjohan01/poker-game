@@ -45,24 +45,24 @@ class RankEvaluationRuleTest {
 
     @Test
     void fourOfTheSameEvaluate() {
-        String[] threeSameHand = {"10S", "10C", "10H", "10D", "3S"};
-        hand = game.setupGameOfCardsFromInput(threeSameHand);
+        String[] fourSameHand = {"10S", "10C", "10H", "10D", "3S"};
+        hand = game.setupGameOfCardsFromInput(fourSameHand);
         String evaluation = rankRule.evaluate(hand);
         assertEquals("Four of the same", evaluation);
     }
 
     @Test
     void fullHouseOfTheSameEvaluate() {
-        String[] threeSameHand = {"10S", "10C", "10H", "3D", "3S"};
-        hand = game.setupGameOfCardsFromInput(threeSameHand);
+        String[] fullHouseHand = {"10S", "10C", "10H", "3D", "3S"};
+        hand = game.setupGameOfCardsFromInput(fullHouseHand);
         String evaluation = rankRule.evaluate(hand);
         assertEquals("Full house", evaluation);
     }
 
     @Test
     void allDifferentEvaluate() {
-        String[] threeSameHand = {"2S", "3C", "4H", "6D", "KnS"};
-        hand = game.setupGameOfCardsFromInput(threeSameHand);
+        String[] allDifferentHand = {"2S", "3C", "4H", "6D", "KnS"};
+        hand = game.setupGameOfCardsFromInput(allDifferentHand);
         String evaluation = rankRule.evaluate(hand);
         assertEquals("", evaluation);
     }
