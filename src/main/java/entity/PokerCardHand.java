@@ -7,7 +7,7 @@ import java.util.*;
 public class PokerCardHand implements CardHand, CardHandEvaluationRules {
     // It is a good idea to initialize the collections with empty Set/Map(s) to avoid constant checks for null
     private Map<Card, Integer> originalHand = new HashMap<>();
-    private Map<Integer, Integer> numberOfRanks = new HashMap<>();
+    private Map<Rank, Integer> numberOfRanks = new HashMap<Rank, Integer>();
     private Map<Suite, Integer> numberOfSuite = new HashMap<>();
 
     private List<EvaluationRule> rules = new ArrayList<>();
@@ -34,11 +34,11 @@ public class PokerCardHand implements CardHand, CardHandEvaluationRules {
             }
 
             if (cardAdded) {
-                Integer howManyRanks = numberOfRanks.get(newCard.getRankValue());
+                Integer howManyRanks = numberOfRanks.get(newCard.getRank());
                 if (howManyRanks != null && howManyRanks > 0) {
-                    numberOfRanks.put(newCard.getRankValue(), ++howManyRanks);
+                    numberOfRanks.put(newCard.getRank(), ++howManyRanks);
                 } else {
-                    numberOfRanks.put(newCard.getRankValue(), 1);
+                    numberOfRanks.put(newCard.getRank(), 1);
                 }
                 Integer howManySuites = numberOfSuite.get(newCard.getSuite());
                 if (howManySuites != null && howManySuites > 0) {

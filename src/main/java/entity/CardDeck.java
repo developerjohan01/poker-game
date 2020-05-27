@@ -4,6 +4,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+
+/**
+ * NOT USED
+ * @depricated
+ */
 public class CardDeck {
     private static final int numberOfCards = 52; // 54? no! we ignore the Jokers now
     private Map<String, Integer> cardRankingSymbolValueMap = Stream.of(new Object[][] {

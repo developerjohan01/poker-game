@@ -12,11 +12,11 @@ class CardTest {
     @BeforeEach
     void setUp() {
         subject = new Card("A", "H"); // Ace of Harts
-
     }
+
     @Test
     void getRankValue() {
-        assertEquals(0, subject.getRankValue().intValue());
+        assertEquals(Rank.A, subject.getRank());
     }
 
     @Test
@@ -26,7 +26,7 @@ class CardTest {
 
     @Test
     void testEquals() {
-        Card newCard = new Card(0, Suite.HARTS);
+        Card newCard = new Card(Rank.A, Suite.HARTS);
         assertEquals(subject, newCard);
     }
 }

@@ -6,7 +6,6 @@ import entity.PokerCardHand;
 
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
 public class SuiteEvaluationRule implements EvaluationRule {
     @Override
