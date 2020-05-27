@@ -1,16 +1,10 @@
 package entity;
 
 public enum Suite {
-    SPADES(3), // Highest rank
-    HARTS(2),
-    DIAMONDS(1),
-    CLUBS(0); // Lowest rank
-
-    private final int value;
-
-    Suite(int value){
-        this.value = value;
-    }
+    SPADES, // Highest rank
+    HARTS,
+    DIAMONDS,
+    CLUBS; // Lowest rank
 
     public static Suite letterValueOf(String oneLetterSuite) {
         switch (oneLetterSuite.toUpperCase()) {
@@ -29,9 +23,5 @@ public enum Suite {
             default:
                 throw new IllegalArgumentException();
         }
-    }
-
-    public int rankOf() {
-        return this.value;
     }
 }

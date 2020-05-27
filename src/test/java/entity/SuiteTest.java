@@ -24,13 +24,4 @@ class SuiteTest {
     void valueOf() {
         assertEquals(Suite.valueOf("DIAMONDS"), Suite.DIAMONDS);
     }
-
-    @Test
-    void rankOf() {
-        Suite diamonds = Suite.DIAMONDS;
-        Suite harts = Suite.HARTS;
-        assertEquals(2, harts.rankOf());
-        assertEquals(1, diamonds.rankOf());
-    }
-
 }
