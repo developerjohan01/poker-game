@@ -1,6 +1,4 @@
-package controller;
-
-import entity.CardHandEvaluationRules;
+package game.rules;
 
 public interface EvaluationRule {
     String evaluate(CardHandEvaluationRules hand);

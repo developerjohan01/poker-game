@@ -1,6 +1,7 @@
-package controller;
+package game.rules;
 
-import entity.PokerCardHand;
+import game.Game;
+import game.objects.PokerCardHand;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

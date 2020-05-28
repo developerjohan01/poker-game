@@ -1,7 +1,6 @@
-package controller;
+package game.rules;
 
-import entity.CardHandEvaluationRules;
-import entity.PokerCardHand;
+import game.objects.PokerCardHand;
 
 public class RankEvaluationRule implements EvaluationRule {
     @Override

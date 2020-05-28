@@ -1,6 +1,6 @@
-package controller;
+package game;
 
-import entity.CardHand;
+import game.objects.CardHand;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -37,7 +37,7 @@ class GameTest {
             subject.setupGameOfCardsFromInput(input1);
         });
 
-        String[] input2 = {"AS", "10C", "10H", "3D", "some-value"};
+        String[] input2 = {"AS", "10C", "10H", "3D", "some-domain.value"};
         assertThrows(IllegalArgumentException.class, () -> {
             subject.setupGameOfCardsFromInput(input2);
         });
@@ -52,6 +52,6 @@ class GameTest {
         String[] input = {"AS", "10C", "10H", "3D", "3S"};
         CardHand hand = subject.setupGameOfCardsFromInput(input);
         String gameResult = subject.result();
-        assertEquals("Two pairs", gameResult);
+        assertEquals("Two pairs\nThe highest card rank is A", gameResult);
     }
 }

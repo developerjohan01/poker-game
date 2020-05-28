@@ -1,5 +1,9 @@
-package entity;
+package game.objects;
 
+import game.objects.Card;
+import game.objects.Rank;
+import game.objects.Suite;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,21 +16,21 @@ class CardTest {
     @BeforeEach
     void setUp() {
         subject = new Card("A", "H"); // Ace of Harts
-
     }
+
     @Test
     void getRankValue() {
-        assertEquals(0, subject.getRankValue().intValue());
+        Assertions.assertEquals(Rank.A, subject.getRank());
     }
 
     @Test
     void getSuite() {
-        assertEquals(Suite.HARTS, subject.getSuite());
+        Assertions.assertEquals(Suite.HARTS, subject.getSuite());
     }
 
     @Test
     void testEquals() {
-        Card newCard = new Card(0, Suite.HARTS);
+        Card newCard = new Card(Rank.A, Suite.HARTS);
         assertEquals(subject, newCard);
     }
 }

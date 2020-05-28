@@ -1,4 +1,4 @@
-import controller.Game;
+import game.Game;
 
 public class StartGame {
 

@@ -1,6 +1,4 @@
-package controller;
-
-import entity.CardHandEvaluationRules;
+package game.rules;
 
 public class SpecialEvaluationRule implements EvaluationRule {
     @Override

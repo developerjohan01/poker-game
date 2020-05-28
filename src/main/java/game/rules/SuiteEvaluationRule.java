@@ -1,12 +1,10 @@
-package controller;
+package game.rules;
 
-import entity.Card;
-import entity.CardHandEvaluationRules;
-import entity.PokerCardHand;
+import game.objects.Card;
+import game.objects.PokerCardHand;
 
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
 public class SuiteEvaluationRule implements EvaluationRule {
     @Override

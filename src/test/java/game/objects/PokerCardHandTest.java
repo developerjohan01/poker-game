@@ -1,6 +1,6 @@
-package entity;
+package game.objects;
 
-import controller.Game;
+import game.Game;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,7 @@ class PokerCardHandTest {
     @BeforeEach
     void setUp() {
         game = Game.newInstance();
-        // TODO set the evaluation rules
+        // TODO set the evaluation domain.rules
         subject = new PokerCardHand();
     }
 
@@ -25,7 +25,7 @@ class PokerCardHandTest {
         assertEquals(0, subject.getNumberOfCards().intValue());
         subject.addCard(new Card("A", "S")); // 1
         assertEquals(1, subject.getNumberOfCards().intValue());
-        subject.addCard(new Card(0, Suite.SPADES)); // 1 Adding the same twice - should have no effect
+        subject.addCard(new Card(Rank.A, Suite.SPADES)); // 1 Adding the same twice - should have no effect
         assertEquals(1, subject.getNumberOfCards().intValue());
         subject.addCard(new Card("10", "C")); // 2
         assertEquals(2, subject.getNumberOfCards().intValue());

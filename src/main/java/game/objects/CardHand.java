@@ -1,4 +1,4 @@
-package entity;
+package game.objects;
 
 import java.util.Map;
 
