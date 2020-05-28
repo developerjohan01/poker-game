@@ -1,4 +1,4 @@
-package domain.rules;
+package game.rules;
 
 public class SpecialEvaluationRule implements EvaluationRule {
     @Override

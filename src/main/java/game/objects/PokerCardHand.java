@@ -1,8 +1,7 @@
-package domain.entity;
+package game.objects;
 
-import domain.rules.CardHandEvaluationRules;
-import domain.rules.EvaluationRule;
-import domain.value.Card;
+import game.rules.CardHandEvaluationRules;
+import game.rules.EvaluationRule;
 
 import java.util.*;
 

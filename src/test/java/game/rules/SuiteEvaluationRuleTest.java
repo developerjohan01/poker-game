@@ -1,9 +1,7 @@
-package domain.rules;
+package game.rules;
 
-import domain.Game;
-import domain.rules.EvaluationRule;
-import domain.rules.SuiteEvaluationRule;
-import domain.entity.PokerCardHand;
+import game.Game;
+import game.objects.PokerCardHand;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

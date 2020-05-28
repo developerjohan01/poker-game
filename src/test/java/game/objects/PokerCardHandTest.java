@@ -1,9 +1,8 @@
-package domain.entity;
+package game.objects;
 
-import domain.Game;
+import game.Game;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import domain.value.Card;
 
 import static org.junit.jupiter.api.Assertions.*;
 

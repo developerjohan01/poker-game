@@ -1,4 +1,4 @@
-package domain.entity;
+package game.objects;
 
 public enum Rank {
     A(14),

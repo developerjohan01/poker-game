@@ -1,8 +1,8 @@
-package domain;
+package game;
 
-import domain.rules.*;
-import domain.value.Card;
-import domain.entity.PokerCardHand;
+import game.rules.*;
+import game.objects.Card;
+import game.objects.PokerCardHand;
 
 import java.util.ArrayList;
 import java.util.List;

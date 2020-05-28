@@ -18,5 +18,5 @@ Output would be: Flush of SPADES
 
 Invalid inputs won't be accepted and an IllegalArgumentException() is thrown.
 
-Note; not all evaluation domain.rules are implemented or complete, but can easily be added.
+Note; not all evaluation game.rules are implemented or complete, but can easily be added.
 

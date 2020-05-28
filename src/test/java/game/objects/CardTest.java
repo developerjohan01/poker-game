@@ -1,7 +1,8 @@
-package domain.value;
+package game.objects;
 
-import domain.entity.Rank;
-import domain.entity.Suite;
+import game.objects.Card;
+import game.objects.Rank;
+import game.objects.Suite;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

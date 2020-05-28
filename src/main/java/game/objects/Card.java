@@ -1,7 +1,4 @@
-package domain.value;
-
-import domain.entity.Rank;
-import domain.entity.Suite;
+package game.objects;
 
 import java.util.Objects;
 

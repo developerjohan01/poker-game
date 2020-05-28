@@ -1,7 +1,7 @@
-package domain.rules;
+package game.rules;
 
-import domain.value.Card;
-import domain.entity.PokerCardHand;
+import game.objects.Card;
+import game.objects.PokerCardHand;
 
 import java.util.Iterator;
 import java.util.Map;

@@ -1,6 +1,4 @@
-package domain.entity;
-
-import domain.value.Card;
+package game.objects;
 
 import java.util.Map;
 

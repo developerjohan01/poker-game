@@ -1,6 +1,6 @@
-package domain;
+package game;
 
-import domain.entity.CardHand;
+import game.objects.CardHand;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -52,6 +52,6 @@ class GameTest {
         String[] input = {"AS", "10C", "10H", "3D", "3S"};
         CardHand hand = subject.setupGameOfCardsFromInput(input);
         String gameResult = subject.result();
-        assertEquals("Two pairs", gameResult);
+        assertEquals("Two pairs\nThe highest card rank is A", gameResult);
     }
 }

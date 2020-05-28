@@ -1,6 +1,6 @@
-package domain.rules;
+package game.rules;
 
-import domain.value.Card;
+import game.objects.Card;
 
 import java.util.Comparator;
 import java.util.Optional;

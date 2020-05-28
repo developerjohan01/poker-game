@@ -1,4 +1,4 @@
-package domain.entity;
+package game.objects;
 
 import org.junit.jupiter.api.Test;
 
