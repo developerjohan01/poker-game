@@ -1,6 +1,8 @@
-package entity;
+package domain.entity;
 
-import controller.EvaluationRule;
+import domain.rules.CardHandEvaluationRules;
+import domain.rules.EvaluationRule;
+import domain.value.Card;
 
 import java.util.*;
 

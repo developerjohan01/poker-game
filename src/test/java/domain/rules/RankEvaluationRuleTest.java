@@ -1,8 +1,10 @@
-package controller;
+package domain.rules;
 
-import entity.PokerCardHand;
+import domain.Game;
+import domain.rules.EvaluationRule;
+import domain.rules.RankEvaluationRule;
+import domain.entity.PokerCardHand;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,8 +1,9 @@
-package entity;
+package domain.entity;
 
-import controller.Game;
+import domain.Game;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import domain.value.Card;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,7 +17,7 @@ class PokerCardHandTest {
     @BeforeEach
     void setUp() {
         game = Game.newInstance();
-        // TODO set the evaluation rules
+        // TODO set the evaluation domain.rules
         subject = new PokerCardHand();
     }
 

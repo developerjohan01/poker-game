@@ -1,4 +1,7 @@
-package entity;
+package domain.value;
+
+import domain.entity.Rank;
+import domain.entity.Suite;
 
 import java.util.Objects;
 

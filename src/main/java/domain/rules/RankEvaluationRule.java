@@ -1,7 +1,6 @@
-package controller;
+package domain.rules;
 
-import entity.CardHandEvaluationRules;
-import entity.PokerCardHand;
+import domain.entity.PokerCardHand;
 
 public class RankEvaluationRule implements EvaluationRule {
     @Override

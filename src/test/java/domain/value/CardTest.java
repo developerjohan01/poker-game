@@ -1,5 +1,8 @@
-package entity;
+package domain.value;
 
+import domain.entity.Rank;
+import domain.entity.Suite;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,12 +19,12 @@ class CardTest {
 
     @Test
     void getRankValue() {
-        assertEquals(Rank.A, subject.getRank());
+        Assertions.assertEquals(Rank.A, subject.getRank());
     }
 
     @Test
     void getSuite() {
-        assertEquals(Suite.HARTS, subject.getSuite());
+        Assertions.assertEquals(Suite.HARTS, subject.getSuite());
     }
 
     @Test

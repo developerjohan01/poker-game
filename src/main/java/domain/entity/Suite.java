@@ -1,4 +1,4 @@
-package entity;
+package domain.entity;
 
 public enum Suite {
     SPADES, // Highest rank

@@ -1,4 +1,6 @@
-package entity;
+package domain.entity;
+
+import domain.value.Card;
 
 import java.util.Map;
 

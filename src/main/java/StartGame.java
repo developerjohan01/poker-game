@@ -1,4 +1,4 @@
-import controller.Game;
+import domain.Game;
 
 public class StartGame {
 

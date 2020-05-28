@@ -1,8 +1,8 @@
-package controller;
+package domain;
 
-import entity.Card;
-import entity.CardHandEvaluationRules;
-import entity.PokerCardHand;
+import domain.rules.*;
+import domain.value.Card;
+import domain.entity.PokerCardHand;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +24,7 @@ public class Game {
     private void setupRules(CardHandEvaluationRules hand) {
         gameRules.add(new RankEvaluationRule());
         gameRules.add(new SuiteEvaluationRule());
+        gameRules.add(new TopCardEvaluationRule());
         hand.setRules(gameRules);
     }
 

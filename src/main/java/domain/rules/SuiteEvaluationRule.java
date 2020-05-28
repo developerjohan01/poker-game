@@ -1,8 +1,7 @@
-package controller;
+package domain.rules;
 
-import entity.Card;
-import entity.CardHandEvaluationRules;
-import entity.PokerCardHand;
+import domain.value.Card;
+import domain.entity.PokerCardHand;
 
 import java.util.Iterator;
 import java.util.Map;
