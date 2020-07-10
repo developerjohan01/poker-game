@@ -28,7 +28,7 @@ public class PokerCardHand implements CardHand, CardHandEvaluationRules {
         if (!isFullHand()) {
             Integer howManyOfThisCard = originalHand.get(newCard);
             if (howManyOfThisCard != null && howManyOfThisCard > 0) {
-                // @ of the same is not allowed in poker... but if you use 2 decks...
+                // 2 of the same is not allowed in poker... but if you use 2 decks...
                 // originalHand.put(newCard, ++howManyOfThisCard);
             } else {
                 cardAdded = originalHand.put(newCard, 1) == null;
